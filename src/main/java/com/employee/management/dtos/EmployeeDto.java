@@ -13,9 +13,11 @@ public class EmployeeDto {
 
     private String phone;
 
-    private String designation;
+/*    private String designation;*/
 
     private Double salary;
+
+    private Long departmentId;
 
     private LocalDateTime createdAt;
 

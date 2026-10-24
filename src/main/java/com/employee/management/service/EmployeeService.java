@@ -1,10 +1,6 @@
 package com.employee.management.service;
-
 import com.employee.management.dtos.EmployeeDto;
-import com.employee.management.entity.Employee;
-
 import java.util.List;
-
 public interface EmployeeService {
     EmployeeDto saveEmployee(EmployeeDto employee);
     EmployeeDto updateEmployee(Long id, EmployeeDto employee);

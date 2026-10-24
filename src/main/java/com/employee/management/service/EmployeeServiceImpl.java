@@ -23,10 +23,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     public EmployeeDto saveEmployee(EmployeeDto employeeDto) {
         // Convert DTO to Entity
         Employee employee = modelMapper.map(employeeDto, Employee.class);
-
         // Save Entity
         Employee savedEmployee = employeeRepository.save(employee);
-
         // Convert back to DTO
         return modelMapper.map(savedEmployee, EmployeeDto.class);
     }
@@ -37,19 +35,9 @@ public class EmployeeServiceImpl implements EmployeeService{
                 .orElseThrow(() -> new RuntimeException("Employee not found"));
         Employee employee = modelMapper.map(employeeDto, Employee.class);
         employee.setId(existing.getId());
-
         // Update Entity
         Employee updateEmployee = employeeRepository.save(employee);
-
         return modelMapper.map(updateEmployee,EmployeeDto.class);
-
-       /* existing.setName(employeeDto.getName());
-        existing.setEmail(employeeDto.getEmail());
-        existing.setPhone(employee.getPhone());
-        existing.setDesignation(employee.getDesignation());
-        existing.setSalary(employee.getSalary());
-        existing.setUpdatedAt(employee.getUpdatedAt());*/
-
     }
 
     @Override
